@@ -1,0 +1,120 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4516,        112]
+NotebookOptionsPosition[      3668,         91]
+NotebookOutlinePosition[      4069,        107]
+CellTagsIndexPosition[      4026,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CurrentFolder", "=", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.847471259486392*^9, 3.8474712730418997`*^9}, {
+   3.8474713128615527`*^9, 3.8474713146823363`*^9}, 
+   3.8474738063339634`*^9},ExpressionUUID->"34cbeff0-7601-4aa1-90a9-\
+c39b10c805c8"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\bmart\\\\OneDrive\\\\Documents\\\\Wolfram \
+Mathematica\\\\Final Project\\\\\"\>"], "Output",
+ CellChangeTimes->{3.8474713161876793`*^9},
+ CellLabel->"Out[36]=",ExpressionUUID->"e3dd4f6d-e429-43e6-b486-7e6f8190ed25"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TargetFile", " ", "=", " ", 
+   RowBox[{"StringJoin", "[", 
+    RowBox[{"CurrentFolder", ",", "\"\<vehicles.csv\>\""}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8474714061526175`*^9, 3.8474714134937053`*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"fd3108f9-8974-440b-b402-237a02352db5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AllDate", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{"TargetFile", ",", "\"\<Dataset\>\"", ",", 
+     RowBox[{"\"\<HeaderLines\>\"", "->", "1"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8474713665467105`*^9, 3.847471375102837*^9}, {
+  3.8474714232024684`*^9, 3.8474714247746162`*^9}, {3.8474737759446754`*^9, 
+  3.847473788568017*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"77d4e0ba-03f7-46df-8a11-975bf6b91d74"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DesiredColumns", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<city08\>\"", ",", "\"\<co2TailpipeGpm\>\"", ",", "\"\<comb08\>\"", 
+     ",", "\"\<cylinders\>\"", ",", "\"\<drive\>\"", ",", "\"\<fuelType1\>\"",
+      ",", "\"\<highway08\>\"", ",", "\"\<make\>\"", ",", "\"\<model\>\"", 
+     ",", "\"\<VClass\>\"", ",", "\"\<year\>\""}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8474753266616015`*^9, 3.8474753693897877`*^9}},
+ CellLabel->"In[61]:=",ExpressionUUID->"265316aa-0ec6-4e9e-8ada-baaa69d041fd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReducedData", "=", 
+   RowBox[{"AllDate", "[", 
+    RowBox[{
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#fuelType1", "==", "\"\<Regular Gasoline\>\""}], "||", 
+        RowBox[{"#fuelType1", "==", "\"\<Premium Gasoline\>\""}], " ", "||", 
+        RowBox[{"#fuelType1", "==", "\"\<Midgrade Gasoline\>\""}]}], "&"}], 
+      "]"}], ",", " ", "DesiredColumns"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.847473810978571*^9, 3.847473837282113*^9}, {
+   3.8474739642049923`*^9, 3.8474739672490883`*^9}, {3.847474021955805*^9, 
+   3.847474025442587*^9}, {3.847474107968321*^9, 3.8474741981476088`*^9}, {
+   3.8474742729831176`*^9, 3.84747438534822*^9}, 3.847474594585226*^9, {
+   3.847474744929345*^9, 3.8474747960323725`*^9}, {3.847474894618806*^9, 
+   3.8474748960457354`*^9}, {3.847475138162449*^9, 3.847475161744355*^9}, {
+   3.8474752413124743`*^9, 3.8474752518327093`*^9}, {3.8474753382953663`*^9, 
+   3.8474753643557606`*^9}, 3.847477913970984*^9, 3.847479116326867*^9},
+ CellLabel->"In[64]:=",ExpressionUUID->"ca77d30e-50f1-434a-92ba-5b85e0b0dce8"]
+},
+WindowSize->{960, 478},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ec8895be-5237-42b5-85b6-1ae5ac63714b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 326, 7, 28, "Input",ExpressionUUID->"34cbeff0-7601-4aa1-90a9-c39b10c805c8"],
+Cell[909, 31, 249, 3, 32, "Output",ExpressionUUID->"e3dd4f6d-e429-43e6-b486-7e6f8190ed25"]
+}, Open  ]],
+Cell[1173, 37, 332, 7, 28, "Input",ExpressionUUID->"fd3108f9-8974-440b-b402-237a02352db5"],
+Cell[1508, 46, 471, 9, 28, "Input",ExpressionUUID->"77d4e0ba-03f7-46df-8a11-975bf6b91d74"],
+Cell[1982, 57, 555, 10, 48, "Input",ExpressionUUID->"265316aa-0ec6-4e9e-8ada-baaa69d041fd"],
+Cell[2540, 69, 1124, 20, 140, "Input",ExpressionUUID->"ca77d30e-50f1-434a-92ba-5b85e0b0dce8"]
+}
+]
+*)
+
